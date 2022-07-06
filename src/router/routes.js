@@ -56,9 +56,7 @@ export default [
     component: {
       beforeRouteEnter(to, from, next) {
         Promise.all([
-          store.dispatch("auth/fetchUser").then((test) => {
-            console.log(test);
-          }),
+          store.dispatch("auth/fetchUser"),
         ])
           .then(() => {
             next({ name: "Dashboard" });
